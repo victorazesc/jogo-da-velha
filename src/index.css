@@ -1,13 +1,82 @@
+@import url('https://fonts.googleapis.com/css?family=Fredoka+One&display=swap');
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font: 14px "Fredoka One", Futura, sans-serif;
+  margin: 20px;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+ol, ul {
+  padding-left: 30px;
+}
+
+.board-row:after {
+  clear: both;
+  content: "";
+  display: table;
+}
+
+.status {
+  margin-bottom: 10px;
+}
+
+.square {
+  background: #fff;
+  font-family: 'Fredoka One';
+  border: none;
+  float: left;
+  font-size: 60px;
+  font-weight: bold;
+  line-height: 34px;
+  height: 84px;
+  margin-right: -1px;
+  margin-top: -1px;
+  padding: 0;
+  text-align: center;
+  width: 84px;
+}
+
+.square:focus {
+  outline: none;
+}
+
+.kbd-navigation .square:focus {
+  background: #ddd;
+}
+
+.game {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+}
+
+.game-board {
+  width: 306px;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 80px);
+}
+
+.game-info {
+  width: 306px;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 440px);
+}
+
+.victory-message {
+  position: absolute;
+  top: 100px;
+  z-index: 9;
+  left: 10px;
+  text-shadow: 0px 5px 6px #00000050;
+  transform: rotate(-45deg);
+  font-size: 65px;
+  color: lightseagreen;
+}
+
+.restore-button button {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+  opacity: 0;
 }
